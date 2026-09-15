@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detector Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='mywebscript.js') }}" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-icon">🧠</div>
+            <h1>Emotion Detector AI</h1>
+            <p class="subtitle">Analyze text sentiment and emotion scores using IBM Watson NLP</p>
+        </header>
+
+        <main class="card">
+            <div class="input-section">
+                <label for="textToAnalyze" class="input-label">Enter Text for Emotion Analysis:</label>
+                <textarea 
+                    id="textToAnalyze" 
+                    name="textToAnalyze" 
+                    rows="4" 
+                    placeholder="Type or paste your text here (e.g. 'I am glad this happened' or 'I am really mad about this')..."></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="runSentimentBtn" onclick="RunSentiment()" class="btn btn-primary">
+                    <span class="btn-icon">⚡</span> Run Emotion Analysis
+                </button>
+            </div>
+
+            <div class="response-section">
+                <h3 class="response-title">Analysis Output</h3>
+                <div id="system_response" class="response-box">
+                    <span class="placeholder-text">Click "Run Emotion Analysis" to view results here.</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Powered by Watson NLP & Flask Microframework | Final Project - Emotion Detector</p>
+        </footer>
+    </div>
+</body>
+</html>
